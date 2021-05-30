@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Grid, Row, Col } from "react-flexbox-grid";
+import FriendList from "./components/FriendList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,8 +14,9 @@ function App() {
   return (
     <Grid>
       <Row>
-        <Col>You've clicked {count} times.</Col>
+        <FriendList />
       </Row>
+      <Row>{`You've clicked ${count} times.`}</Row>
       <Row>
         <Col>
           <button type="button" onClick={increaseCount}>
