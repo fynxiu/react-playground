@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
@@ -7,6 +7,9 @@ function App() {
   const increaseCount = () => {
     setCount(count + 1);
   };
+  useEffect(() => {
+    document.title = count + " times";
+  }, [count]);
   return (
     <Grid>
       <Row>
