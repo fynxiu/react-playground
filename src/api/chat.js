@@ -10,7 +10,8 @@ class ChatAPI {
       // );
       this.friendsHandlerMap.forEach((handler, key) => {
         // console.log(`${key}'s handler is ${typeof handler}`);
-        handler({ isOnline: Random.randomInteger(0, 1) === 1 });
+        typeof handler === "function" &&
+          handler({ isOnline: Random.randomInteger(0, 1) === 1 });
       });
     }, 10 * 1000);
   }
